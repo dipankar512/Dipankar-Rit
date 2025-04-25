@@ -337,6 +337,7 @@
             margin-top: 60px;
             position: relative;
             z-index: 2;
+            flex-wrap: wrap;
         }
 
         .stat-item {
@@ -1038,9 +1039,12 @@
                 margin-bottom: 30px;
             }
             
-            .stats-container {
+            .hero-cta {
                 justify-content: center;
-                flex-wrap: wrap;
+            }
+            
+            .social-links {
+                justify-content: center;
             }
             
             .form-row {
@@ -1086,6 +1090,11 @@
             
             .contact-box {
                 width: 100%;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -1616,34 +1625,40 @@
             });
             
             // Counter animation
-            const statNumbers = document.querySelectorAll('.stat-number');
-            if (statNumbers.length > 0) {
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        statNumbers.forEach(stat => {
-                            const target = parseInt(stat.getAttribute('data-count'));
-                            const suffix = stat.textContent.includes('%') ? '%' : '+';
-                            let count = 0;
-                            const duration = 2000;
-                            const increment = target / (duration / 16);
-                            
-                            const updateCount = () => {
-                                count += increment;
-                                if (count < target) {
-                                    stat.textContent = Math.floor(count) + suffix;
-                                    requestAnimationFrame(updateCount);
-                                } else {
-                                    stat.textContent = target + suffix;
-                                }
-                            };
-                            
-                            updateCount();
-                        });
-                        observer.disconnect();
-                    }
-                }, { threshold: 0.5 });
-                
-                observer.observe(document.querySelector('.hero-section'));
+            function animateCounters() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const suffix = stat.textContent.includes('%') ? '%' : '+';
+                    let count = 0;
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    
+                    const updateCount = () => {
+                        count += increment;
+                        if (count < target) {
+                            stat.textContent = Math.floor(count) + suffix;
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            stat.textContent = target + suffix;
+                        }
+                    };
+                    
+                    updateCount();
+                });
+            }
+            
+            // Initialize counter animation when stats section is visible
+            const statsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateCounters();
+                    statsObserver.disconnect();
+                }
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.hero-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
             }
             
             // Form submission
