@@ -476,6 +476,123 @@
             transform: rotate(90deg);
         }
 
+        /* ====== Contact Section ====== */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(129, 0, 189, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(129, 0, 189, 0.2);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #ad32ff, #470077);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 250px;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-item {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            animation: pulse 1.2s ease-in-out infinite;
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-dark);
@@ -772,6 +889,15 @@
             </div>
 
             <div class="portfolio-item" data-category="thumbnail">
+                <img src="https://media-hosting.imagekit.io/9c8dd8857b3345ee/bit%20coin%201.jpg?Expires=1840702470&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=lbY-Nzu15F~WizECOaDpP-oYpphK3vtWmoD-F9klIvg4wEzw2UwCndumu8iGIoChPyNqQ-MqFd7VZGGNXeKz7V08pIiD01OBSDnGkvwVpjA9Ps4ZlhkM4rEtn2WxJ1PjKJUjvjvk9W6GB2gEOxlQ1Hq~KxkP3t4qt4Z5W1rzzW7xvKipnRLZRzklsOWfYlaXWCw8d4AODJbMvydfl1xX6kj8hjFZfIYoyHHLw5K5eOrZG-eSm5VxH-Kq80DWqlc24ehkUc9oPXBr0r-m2LMmK1aYYvQv624wbD579yGkh5W6-IaOfwhl-91YuTkSny7vSbbawizq2uI7LGKwDpgvog__" alt="Thumbnail Design" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>YouTube Thumbnails</h3>
+                    <p>Series of thumbnails for content creator</p>
+                </div>
+            </div>
+
+
+            <div class="portfolio-item" data-category="thumbnail">
                 <img src="https://media-hosting.imagekit.io/ec93e5a6bac34e49/thumbail%20for%20baker.jpg?Expires=1840700361&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=B7qUOq39f~KqJ7Uf5piuke61ZhBsbWQpr1xICcYxYzLm8twa7kvCSmgL2Q41-4H7D9Qr4UNpSdT39xLrZgfyjfZrUWs5P7fwxcBtskGEKTaQ3~9cWVe19Rfid004vFMfW8-7J07CnhdSzczQ4ICi8dnQ2nTdvh1YcCnzcTxVfQ6kqb79Ujwjfno9h9vwIafjUxJn6PV8QVYeqNcr32AGov39aPV1VgXI-akmuFT9X2CxhkzlQExclOEr~HWeavmn4SGQx05kR3~zNtG46aF2lSYboy-c3XZu5nwb7Nc~J34y1HR2wIzNreeW5YDsErjQXMeUX-fLomCGozV7oW4Qyw__" alt="Thumbnail Design" class="portfolio-img">
                 <div class="portfolio-info">
                     <h3>YouTube Thumbnails</h3>
@@ -818,15 +944,7 @@
                     <p>Series of thumbnails for content creator</p>
                 </div>
             </div>
-
-            <div class="portfolio-item" data-category="thumbnail">
-                <img src="https://media-hosting.imagekit.io/9c8dd8857b3345ee/bit%20coin%201.jpg?Expires=1840702470&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=lbY-Nzu15F~WizECOaDpP-oYpphK3vtWmoD-F9klIvg4wEzw2UwCndumu8iGIoChPyNqQ-MqFd7VZGGNXeKz7V08pIiD01OBSDnGkvwVpjA9Ps4ZlhkM4rEtn2WxJ1PjKJUjvjvk9W6GB2gEOxlQ1Hq~KxkP3t4qt4Z5W1rzzW7xvKipnRLZRzklsOWfYlaXWCw8d4AODJbMvydfl1xX6kj8hjFZfIYoyHHLw5K5eOrZG-eSm5VxH-Kq80DWqlc24ehkUc9oPXBr0r-m2LMmK1aYYvQv624wbD579yGkh5W6-IaOfwhl-91YuTkSny7vSbbawizq2uI7LGKwDpgvog__" alt="Thumbnail Design" class="portfolio-img">
-                <div class="portfolio-info">
-                    <h3>YouTube Thumbnails</h3>
-                    <p>Series of thumbnails for content creator</p>
-                </div>
-            </div>
-
+            
             <div class="portfolio-item" data-category="thumbnail">
                 <img src="https://media-hosting.imagekit.io/ac3b374dc9c046c2/sucessful%20persion.jpg?Expires=1840702470&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=oQoPCjthx2tgvGGkBBHWTrMS92hfJnXb1NpxFChMcVRtqJH0daUdvCkHVhwNE8VrFpTFkwPXKbVdz~9eGSDrooZoMlr4BWfyzRDdwdd39nQCSLzCV2QzN1N6sJGQOdby27WWjwHGshU48BA0ffAf1oH3-2f3RlDhOJ1JBdhpTWGwZwE86h1igDkJ3hd0ivvxXPivBGS6ma5diDJ-5TtTwmfWQrx7-encGwI28FMjrzyzA911DIlSSWa43Txm0vo8W3R2Xo04LAm7YlHoudGhArahSmGAsiRrqiqsR8lbLI9s7n27mDvWcCbVugC-g9MKRBo1mdjEp7~VQYyCQOODgw__" alt="Thumbnail Design" class="portfolio-img">
                 <div class="portfolio-info">
@@ -857,9 +975,7 @@
                     <h3>YouTube Thumbnails</h3>
                     <p>Series of thumbnails for content creator</p>
                 </div>
-            </div>
-
-           
+            </div>    
 
             <div class="portfolio-item" data-category="thumbnail">
                 <img src="https://media-hosting.imagekit.io/a135e37d8de84ea1/mr%20beast.jpg.png?Expires=1840700361&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=gb8NpQHmfpECmrb3dro3XcVntzdfpG2MJC0mvmdqmyQ~z0qu4W6zCetQA5x3tWNkaOxi86ubXjfxyI3msZhxlaTKt16bpc4DSpa823f5eys9afpoQj8RZTmsbWQMcjn5e1lo~Fmz6JOqLMI5aI0norpNobvmR9khdcEMkrIIhy6YgW6bIVoRsFq7X45QgFu9AXrcyb-GaCgvCQnGUESZ8kZ0lAbfRqqhq9q4D-Fi~V6NEKKJX~aWG6ddURmalBcSxeFApAbp2QmIh9gU7jOnaWWABpwb7ENoKKoVON125pu2eMT0f~h1608dy15AsaaVhmy0~NQqIS-1fcPUCXAfBg__" alt="Thumbnail Design" class="portfolio-img">
@@ -920,7 +1036,7 @@
 
             <!-- Brand Design -->
             <div class="portfolio-item" data-category="brand">
-                <img src="https://source.unsplash.com/random/600x400?brand,design,1" alt="Brand Design" class="portfolio-img">
+                <img src="https://media-hosting.imagekit.io/b03dc99834cd494e/Untitled-2tuy.png.jpg?Expires=1840937279&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=xHdLSqcTnR9CWrUzz2a8zvcBVQZbEwV3vUGD~Q9K4JA-PGtBBLTpQWenku4uTuDkr~PmATsRSm78gP7AI8UYP7SRGaM3V9~nMB6BnYqkE~MV1micFr9n9423IvpRJfpdN5O0mTwoXv~HnK0F7hmVEWLWWRuAzHDZNi4NOqh7TSniGXvZdrkzUWTgCsxuc3mXtRBlBAyJRnjIJSWux5ICofoGufm3SaFiQE7y3hgluIi~5qwDuGiBXopNRDPkhuSwX3YTK~qQ-ZCM3tC0qBMmNnApHYSnbShFH3DBfN3zCOD-ytzq5AcGucdWPx7QQiiuW8QAZHz6yN8pU9iLDwbaBA__" alt="Brand Design" class="portfolio-img">
                 <div class="portfolio-info">
                     <h3>Logo Design</h3>
                     <p>Minimalist logo for tech startup</p>
@@ -1001,6 +1117,103 @@
                 </div>
             </div>
 
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/07e3c8dc537e4619/3fg.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=yikvFqYmf3TBb0NQYGhIWzzGy2zxdNM2X3O2vLjltrBl~Fh6f7byOc-uni1w0PKFhPx2tpQoIbudt5Qgkt17hdRhMHNS6XxfuWE-sCA1eop9C9T3LYdJFxce~RHURKEhRcP7aLYUW9tq5Vwb5SA7GnZcIhMowBmNwhKPwUvhRZ7g-Q12MzCdY7vtXdAalbqK419wQ6~Yf2gu2DGtQexOU8qzuUab0Oibp1VuyE43hiUVDhsUbdQNNzhes5wHN3gD4lk9~LITVZP-298oh9Yk3Pi~3yVHTecXy8e56k3nD0ZnLEOnEObVC~nttRHGhxdIAkxUMli1NaWGm1yyh7PaSw__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/a1317fb97f05441e/3fgsdddtg.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1FwU2IcXY5UxmtFSUwkH8tobF2C5RUdMQSzjgFjkdBA57g5QdzxTvA4Ymz3XYAIQ6EVPXRidQHUVEO4iYpK--9Rfkr6J21BjrobxO-M8XR-wY0yg4N8fcAF4J-R~vceg~FB81pm4vMSSFLY2hoWAEtFpSyGuCGT4ckTIWH4pTCeHRY0Zm5AA9z3ZoqGWdXiw4ijU8TqMld7NIuZPOU4B0MVW1shWQyGPRQydtt-GxChgTeajuLyS6VoZsK~moE5WuIz04u-3HQ~10KCNCxPgQNiaqkzegp8twKYaSEHcAeQ4O6iIvrM~rhn3ShqkJPVZZ-hJCQsXKhFLOJzu36FfAA__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/2843579e5cf64bb5/Available.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=UbqiVreefvrxwX-jWLcDw~mq1VR9Kg94hmCw7vaArBtp9bym9N-fXjsLTJ5iT1K9KznIi~hvajFYnlaJNF4DG7ucnoQ9VGpswgWIwV5hUOs2T7ow2Hshib5Im3avORNJGDRC82XO4ox22vgxhs3ilgMmwM~P-D1gzBty6a0uIz67ziiAg-ZnK8-C8cBWdJ9TMUkUKb3zErenBOEMuycgOH508t-1VvU4AD5oZajmjJTrt25BpI2MgZF88mn~I6UCmxbtoG465WZhPBX0ojqIVubKT8EnzEVkE7PGOuuyWa1IFDaGlpu8BLyeouHouXts7FGo~eOc4sCcuWXA46-3Rw__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/76577b42153d4913/3wwwww.png?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=j7h0hLCyAX3Y6PMIOyw2kkZm-MCeIm5hcv1PZUAo8tt1gXr-6QPwG-djqXXeRXxB2HcOVSQgRFG3aLUBn2MBIKhppzhoEaqOeTImZp2E0WCdOyAUW4tqN5gvhvf-noQ~ul9axbQCHKeubdDSyYnLFzx8sBXqR6-W~eLyUbP6Zo~qjcx8eLb6~UHh-a1wqYHXLB7E~rLmclB~UdbojZsZJhpKrVR2Fpz0xnvnfPrzvYng1~r~~324zht2I~J51ohniBVm5CEEQaLxHfE1eiEpJehV3oY8m75qrDx8-XRiWGWXfWWnAcucSAQPsyhsGzbjNCkRDNN9JwsFr0jJREaHew__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/ff66002c308c4d53/Available%20SWEET.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=2E3ntnMIEZN5t0y9oDxKZtNy-0VPwGQCy-dzIH~XfFvY~zxoVFe-fT1Xg0jM8xR4KAmj2qxrcozLm10h35gsV53uOPxkBqhGKFSDo3lHzQ2X9y-vJuVV0uLpfvNoZbHQOacrtjb~KGjw7n7q-BlAB4RRYMb8ezSDwlZLcCLRinOTPNsP20BdyX0aiSze66-Ds44hVLKqWlsn-jlU6LWpIOLnD3N5mEzlQCGLlklFLPbcDuXo3aAubF2vhC-IKe1mOgcVEx68qLiIFIP0GNcKDRT~xIAyGQSkk70uN3tEzfdOmI-VEgYTmd8rGZFIOAMPckGQniA1oJROVcrQr3G05w__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/9bc29e5721264bbd/new%20final.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=jAY7k4rnJ3NJwjPOfRZJIKrdoQREj-z6et3niyxCMEZj5ERyQQWNpAs5w6QqMFxXS3gYoIv-z9E8YsG4WHEv468hSgE0vX0Mj~IPll~4iVfgIGcf-eEBBrLVxmd1OZJnYjx5Uci8k1dlGCn-QCFE6rZhdMWAjvOplTLDMQH7s4B9Jarlzru1UDqzDTu5aksl8qxflMIjqlFKcMy~JEhwoxfhAZGi-gAB4YlNIHhfQ8QEJLN821HG9brt4JS7beqsA0fAvh2HU6vXoD-uQ6NEsRyn48THvaApBnjm4ccfQd4jSp6-V8QzrBQobbhIE8Rb53noVdWZM2sU6i3qZtxiKg__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/1c9bc820fe6943f7/set%20wallet.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=bu4L3mTGaZSMDdoSEJN6d1bsipEn~N5esnmdmlU0z8Nf5Bp3E5a23tBR2e-P~Tbyzto~I3UEVhOxQh3tdft1nJItMHz2RpDvb05vJLo4FZ80n2jz4qVtQPHaZIf6TT2Ti4QdNqclS~8oIRxFM1cawKEpQtgKKfs-AJ6UbTzrZ4YWJ8x0QbvIYeCfdxbt4rePEZEvRDWgPpX0PgGboSzov4iEPQ3tNc9wQL3Q7y67jdMBllwmKPZ2-CxYD9GOdmE3pyHFzXH2WTTfM2sO00NQEv7DgJZRNXeOsLzjyS1js8uIKU-uLdYDTKVjqPjp~7Fgx-48f-RqGKuTPRoA3sQruA__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/e31a0aaf52d247ba/wallet.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=qo-zRnJ63EoGvR8eNy9xOsIYkNDEvA3HIbjMrzbqQA2rvP83Qn03XtowQGZ2GzTegAiTqZk9gQHjvX8BzLYVi-8mKggQc5RB9pnRTfemaO76SdQ~N2MIZtgzK4QundLdCzKHHLFtLwLB9cw04M6rl0ZrRhdkqTEcek5QO5TDYP5J2dLjXGOHwIP2OQQmvUXo39scPbR-wGom-5Brj3J~K5oEhUjeGpPZaYvafGjmfOvGWON~cFqEa5eO1OXhwTiT7g4QR3RVFdogvLxvtfIb4RM9RsPat0KKh-I8XJwn2I1fpycuvzRDP1Js8AhzlilOZNa9bGnIhQvooxRF30YdTw__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/4e7197488ee94756/Untitled-1.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=w1cvrYHd0qXAJtwR3uEP6nzeZgNjeQTkghB0shyOgXZHm~aGWVSkhYxr05ht9XEZsYwccJ-EkwNm7Qc3oKkWPlM0TbxktC7zcyb5si1pZk1XTxsDzSUB9py~~NAgpvyZNmzOsQ-E5W2Z0HFULidK17XojzBDnCbO~HBzcye03ptsa9x5wokTBO3SJWf06vGSNO5Gf~zaxS85JWwmqDngSXQJc5AgkN0iVgJcjDOAcnBge4vZEjYsNB8ef~xPUqC1lf6XMHX4XRrGpi-J4LBqkxDPYf0-LM54ARkatj486TcshakVf46c3OWiMLm~hBos4i7WBmzvNPL1xM8V3p3AFA__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/1c570e10238a47a4/Untitled-5.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=IK46afwJoscK~hAIrsZDyVE1JI5ZxRJf4kg270tKZbzkvl2oQRBi76AVaXoQg0gfllXIS~j5Mljy8XdN5mCku2XqO1s6wyr4UHqZ6HParCv-NWQaLdBlosgqqs4PPPz5KagkKbrJ-JpKcMIUnekf0ISTT3OXbJcuT2aVkvfvNrZuSguRHrXlbllTONTKkIW1I3JHRystFD~9Nl~g91r6vqbVvjzimKEuN4qFj8YGSQ5Hpo2jzx6pEf4AlbbNzwGjv3EnLooAy7AI2BiPrXXsXDUMzOS7Orof0JkPhgVpB9JI3a0ApzNuYtAZsMwG2FRLeiOknlD0gbDKOiqFKYDQhg__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/03d5669d045d43d2/Untitled-3.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=L6qGuNVwOpThkiNT7fULPrik3g63SDQgg8Uqvtg1yFJrZNKMqIODPbpNAc2DaQd19eJBe3V1rfMZFDQ06Kwb3UZ3xqPuVnsRs5BJ5QsuDK3fEqEGFu3XiD3n7fDvbl1XMPMPFC3zik-v0JIA220lFPbUGr3XHOEezGsAzgpHuDmQyL30jmEWAFx~CmbJ6OQ3kFl335eVgxj862XOJrX37pcGyQVR0FwGlki37bJqKgAtxgQXXRZXjoeWJk7TI2w0003QMzlkxduhydmSzHWSD7ZvULmUAMgM0hUgG0-9aU1AmsZMHifqLHEkZ19sMlnB-yZtod2C6i0zljrBrjnmQw__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/ce4bbdd45dee4449/Join%20JustMe%20Digital%20Platform%20%20&%20Life%20Time%20Income.png?Expires=1840938363&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ap20GeUldmu3fZLdlGHqEagRTVUOw~~iBc10llRRhj6EyqKiaqW1Q0DNHCHpVRgwrgr20KX4U4XeLXz8nu2mgCvzqy1t-ZjgVGRs3KaT6gfbz0GVd0y7jrY~hZefMTPAjYKeOuwMehSsEUHNzbm4X7ZgR9ElJcs-LReeuFwUTUQXK9H2-4421ZUWWgsYwA5U-kHiXUIUWlKyKty6Q1d5H-Hf~d-MhywT2Z3vF5NSnudtPzzdBKgPFXxtqGW6DuAdVXEVaniUbq50KEkocRjCv14S6MQErjB~ijnlx8tn8t1aafcJxN2xPjNwobNS5Cbxz9caIVDZbSg3OxACuYU8cg__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+
             <!-- E-Commerce -->
             <div class="portfolio-item" data-category="ecommerce">
                 <img src="https://media-hosting.imagekit.io/ea0f452dce2b4391/20241224_221923.jpg?Expires=1840723037&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NHYx3nP~N7a~FED8cJYJP3vpfgnYFSzh8f-26HZMQgQqqtx78cAQDVDKzbaZiJp8mzVr6cvz6DYudro7deuRDvUXIWLi72fxn~BedrAEPjMLpcGypusvE8V87pie0jG6XJZ7lFZ2-OOPaKtUqI~jUrYvgUdYay09hNnrvJa2ao8sO-e9fowzA~bZskKK6f5AlCpaiQD4BakoKHliJ8mtaVXFEN5JUl3lJvguwkIy8x3jlG8l7wzeN7mx93gig9X5FRnNRrWkZuLflFPsLXH6QHB0cryHsnZGDX-sETazmX2x9LfySI2pvMkbIOOHSyCjwrrqWS5NkQBBkPRsCsoIow__" alt="E-Commerce Design" class="portfolio-img">
@@ -1068,7 +1281,7 @@
 
             <!-- Logo Design -->
             <div class="portfolio-item" data-category="logo">
-                <img src="https://source.unsplash.com/random/600x400?logo,design,1" alt="Logo Design" class="portfolio-img">
+                <img src="https://media-hosting.imagekit.io/b03dc99834cd494e/Untitled-2tuy.png.jpg?Expires=1840937279&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=xHdLSqcTnR9CWrUzz2a8zvcBVQZbEwV3vUGD~Q9K4JA-PGtBBLTpQWenku4uTuDkr~PmATsRSm78gP7AI8UYP7SRGaM3V9~nMB6BnYqkE~MV1micFr9n9423IvpRJfpdN5O0mTwoXv~HnK0F7hmVEWLWWRuAzHDZNi4NOqh7TSniGXvZdrkzUWTgCsxuc3mXtRBlBAyJRnjIJSWux5ICofoGufm3SaFiQE7y3hgluIi~5qwDuGiBXopNRDPkhuSwX3YTK~qQ-ZCM3tC0qBMmNnApHYSnbShFH3DBfN3zCOD-ytzq5AcGucdWPx7QQiiuW8QAZHz6yN8pU9iLDwbaBA__" alt="Logo Design" class="portfolio-img">
                 <div class="portfolio-info">
                     <h3>Brand Identity</h3>
                     <p>Complete logo package for restaurant</p>
@@ -1079,30 +1292,30 @@
             <div class="portfolio-item" data-category="album">
                 <img src="https://media-hosting.imagekit.io/e74ece86d5cc4138/Untitled-eeretrt.jpg?Expires=1840861828&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=PH1BK-YS4v5oDxzN5sA-tz8xQ0JLEFkKk3-zvUmJiJNLpSa96kNmURmo5-6OriT-6RIr9GvZv5OdQfjuovsJokPBoFknQsggk8YGbCivw1-NE3nq5-YCr0CnoyOo7NADHaUnWA6K5caOhONU3EhTXnH0ydSfSQLjTIJ-2g4A5QBPnVAq0Wk0dnlUNQ1HkBgVR-uwzxdBqzaGFrvZw05EPt9gmEi5HKEGIUXGtEWkWLN-1BsRRHDl3A-DbR~BOEXZnyqkB33aa6qW0QMBnoCT-~LQ5zwJm94jsB~XWS7mcwTDxr5FKiBI58DObUBNj5WrcFEaJs1iwZpzzXONqHxp4A__" alt="Album Design" class="portfolio-img">
                 <div class="portfolio-info">
-                    <h3>Rice Cermony Album</h3>
-                    <p>Rice Cermony Album art release</p>
+                    <h3>rice ceremony album</h3>
+                    <p>rice ceremony album art release</p>
                 </div>
             </div>
 
             <div class="portfolio-item" data-category="album">
                 <img src="https://media-hosting.imagekit.io/a5d6dc8b0eee44ee/Untitled-yyy4.jpg?Expires=1840861828&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=F9UOLqCrkouEGBmseIprhv5cBA-Rl4toeBgpxnbGVkG7JP6rlSgUiJaJyZhzPbhdFVjrQHXYtp8rDyWNlFzhoenqoro6OMVSLSagQ1ucOrRB9OcqGhd27qYkbR8UDCgzqVaZu503cqdcRnsfkK1kiWhhwDrbstXJq0MjDuRGW3cv8K-s~dssmJzVKvUdgjVULUtClA3a0zo~Sodulmd1ZGOzG5qVYd0I6F34rtbagnoqmWT0RGZRIrBsSVZi~4L-Geg~TCY0-mxxUubsXHcfz1gDmGbsP3PEvQCQPHO8A1fhVVEmhzk1rqc5KlaYs~VBcDiiXGYYHggbdAWnbzyyZg__" alt="Album Design" class="portfolio-img">
                 <div class="portfolio-info">
-                    <h3>Rice Cermony Album</h3>
-                    <p>Rice Cermony Album art release</p>
+                    <h3>rice ceremony album</h3>
+                    <p>rice ceremony album art release</p>
                 </div>
             </div>
 
             <div class="portfolio-item" data-category="album">
                 <img src="https://media-hosting.imagekit.io/6435c819a56044a6/Untitled-yyy.jpg?Expires=1840861828&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=WMujSUEVHVgo2~mQtitd79vlCt~HeriPLKhOZ~ITQ6rNVWASSjEMDEO6xoSkYq6rL6z6~95KH7HAh~soWBYFUxiVP6tecUoJXs8nw0ExjsWejzJ-DgTDkQmt0IShq08IbFolzE0JUekHpidGDWIfBzCutzEoegHA459C0mgCa~edEZKQWg5ckh8FgwBgK3HPydWjZXUtEQQhmEqNGjG9akMFQKrr46Txq3GxO9vSM0N5RRNThx5uDgbUxJ3wiyBFPuuxwxlI2XopWnXccHTDLSSQHZYsThiPHNdJQB9VAcy6JYPSX4o7e1vOUeZRKTjiDpZHo9YqvB-iqmILF2glQA__" alt="Album Design" class="portfolio-img">
                 <div class="portfolio-info">
-                    <h3>Rice Cermony Album</h3>
-                    <p>Rice Cermony Album art release</p>
+                    <h3>rice ceremony album</h3>
+                    <p>rice ceremony album art release</p>
                 </div>
             </div>
             
             <!-- Website & App -->
             <div class="portfolio-item" data-category="website">
-                <img src="https://source.unsplash.com/random/600x400?website,design,1" alt="Website Design" class="portfolio-img">
+                <img src="https://media-hosting.imagekit.io/16cd14a77b5141e8/ALL%20PAGE%20UI%20DESIGN%20JPG.jpg?Expires=1840938523&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=M1EE83Xb17SKWMCUNeppL6sTahszDSWa9agB0vdOcrUBeDYcEmpID1HusxFC-Rq0xfTalp~o08E6sPx7O8HfzZj4YTWmSz4iktOqDD9h0oT5nh8chSzvnXMuqtZsmNGdsv-zAzkb9yCJGv5TXmn-NbatgDxkSwehcOCVRUqcpEQzO-vM~XGCct~C9Jr38cWqWhGMbHgtsx81K3tqsWZ9APSFvrg-VJvJLpYx73QG15wuRJFL8tH1rwFeUbfn0JfMTNLQUQ1AwBQPHIUJkgxTRLF~~VWO-oIIvmzlkTThYa6i7DXU1glZB~ehtXruC35rLxsx4KAsY06tYoXiTyDIVg__" alt="Website Design" class="portfolio-img">
                 <div class="portfolio-info">
                     <h3>Responsive Website</h3>
                     <p>Mobile-first design for service business</p>
@@ -1166,6 +1379,22 @@
                 </div>
             </div>
 
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/79d1efab5fe54621/durgha%20puja%20dhamaka%20dAR%20DOFFER.jpg?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=bhDFenP-bTctGbI6ZkKG~m2stKpRf6XE24Ya50iuB2Amy5TgDnUmSyywBdqfsLVlZLr5o~I-tfVfWoNeYqHpLgvxkAAi5K2y40Zh0MZCZWVuyeEbPeIQCkDuJxHrt1KkOOsqwUENYHwe4NsI0cihJJ30rumaxZcMp~dapQuuVRqmxVH0ghieRB3sci3OguAcZq2k3P5b~Pv8tg9hfuk-dK5nNfhxNpzFAEfuFBIZEAGuVxcpKPi6euB708OJHcWxHLQdI8RILeDei-NJJKC-zeLOoMFS2j6E2eC~9p8udnsTxfH3ikZJE917x0YY3t959JBEJXFIzRHJeKYQSD9GUQ__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="social">
+                <img src="https://media-hosting.imagekit.io/aec8fcd3d13649d6/nobojibon%20durgha%20puja%20file1.png?Expires=1840937903&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=jvafa4gbE6QddbZfCw53X-BPOIsFBsOfwvV29w8PMYoaWaXFOcpGcwlu-n-0JL1vJQpJaIRxCYu-XaFQGN~GJl33BG9z2lkUJP9wJR6M0uoeNNU5PHPHdW9pNk-A2-ZJHT9wcDY3WHcze54Pp5t~zLgq5tja6dhxFwUXPu22VkCqNkIA4Scxd6S0MLAXhjbv23VuMys4SK8WEKIY-HvPLWbv8-0ard8r-ofAU9s4KiFNfWjJIc61JT0aODeIwB2V9VeDMtEzAqfVZT2NRw1NtwnUaqHvMJ7nnb4~UtkbyzcducC3OUdZVLZRyxAJQYM2C~Jjm7iudt7L6EWPBRCQtA__" alt="Social Media" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Instagram Campaign</h3>
+                    <p>Series of posts for fashion brand</p>
+                </div>
+            </div>
+
             <div class="portfolio-item" data-category="banner">
                 <img src="https://media-hosting.imagekit.io/658f90bea5544392/store%20ghyyyy.png?Expires=1840861865&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=o~f8JrdmvTiFZfqG4R6XY7xZl5RrhGsKVRllF2jntgAxwI4K8qmaAi0WvJRj1EQXF8xjhnRqmuik9e8Lt1jmSFHDDXbvRknvYUhoSZiLLJSDLxR4sW4X~D6OXU4075CpBDzeajiGwMETE7qS9uR~FNPCVevuZ5rTGs9dNi0uAGeJaRV7JTWS12w~UWxwVT~Rh6utclDSD1z9KZFHiuXEUY1nMsTZvepmRK1NHLrfiQzVMaDrrWFzg4wigHuDI1tQZYzbsB2G054B7xC~sJaUnPixQQL53CmibOLhfBZR6oCENLM9cksyUJIuOEi-FdL39L-F7DK9-swhB8c4I0dLVw__" alt="Banner Design" class="portfolio-img">
                 <div class="portfolio-info">
@@ -1197,6 +1426,37 @@
                 <div class="portfolio-info">
                     <h3>Graphic Tee Design</h3>
                     <p>Original artwork for limited edition t-shirt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out for any inquiries or bookings</p>
+                <p>(click Now)</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-box">
+                    <a href="https://www.google.com/maps/place/Uttar+nowpara+sitola+o+monasa+matar+mondirir/@22.5619937,87.9618704,14z/data=!4m9!1m2!2m1!1sHX7M+XJ,+Nawapara,+West+Bengal+711401!3m5!1s0x3a029d719990fb23:0x6d9dd8bd6069d72c!8m2!3d22.5649694!4d87.9840646!16s%2Fg%2F11tg0q6ft8?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" class="contact-item" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Location (Click)</p>
+                    </a>
+                </div>
+                <div class="contact-box">
+                    <a href="tel:+917001821712" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 7001821712 (Click)</p>
+                    </a>
+                </div>
+                <div class="contact-box">
+                    <a href="https://wa.me/917001821712" class="contact-item" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <p>WhatsApp (Click)</p>
+                    </a>
                 </div>
             </div>
         </div>
