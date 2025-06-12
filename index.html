@@ -533,88 +533,48 @@
         }
 
         /* ====== Portfolio Section ====== */
-        .portfolio {
-            background-color: var(--white);
-        }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
+    :root {
+        --white: #ffffff;
+        --transition: all 0.3s ease;
+    }
 
-        .portfolio-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 300px;
-           
-            transition: var(--transition);
-            animation: fadeIn 0.8s ease-out;
-            transform: scale(0.95);
-            opacity: 0;
-        }
+    .portfolio {
+        background-color: var(--white);
+        padding: 40px 20px;
+    }
 
-        .portfolio-item.animate {
-            transform: scale(1);
-            opacity: 1;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
 
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
+    .section-title img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto 0;
+        border-radius: 0px;
+    }
 
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
+    @media (min-width: 768px) {
+        .section-title img {
+            max-width: 100%;
         }
+    }
 
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(129, 0, 189, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            color: var(--white);
-            opacity: 0;
-            transition: var(--transition);
+    @media (min-width: 1024px) {
+        .section-title img {
+            max-width: 800px;
         }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            transform: translateY(20px);
-            transition: var(--transition);
-            transition-delay: 0.1s;
-        }
-
-        .portfolio-overlay p {
-            transform: translateY(20px);
-            transition: var(--transition);
-            transition-delay: 0.2s;
-        }
-
-        .portfolio-item:hover .portfolio-overlay h3,
-        .portfolio-item:hover .portfolio-overlay p {
-            transform: translateY(0);
-        }
-
+    }
+    
         /* ====== Testimonials Section ====== */
         .testimonials {
             background-color: var(--bg-light);
@@ -1297,25 +1257,17 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Portfolio</h2>
-                <p>A selection of my recent creative projects</p>
-                <p>(Click to view details)</p>
-            </div>
-                <div class="portfolio-item">
-                    <a href="ditels.html">
-                        <img src="image/yttyeryyt.png" alt="Product Photography" class="portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Click to view details</h3>
-                            <p>My Portfolio ditels</p>
-                        </div>
-                    </a>
-                </div>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>My Portfolio</h2>
+            <p>A selection of my recent creative projects</p>
+            <div class="portfolio-image">
+                <img src="metirial/YT thumbnail freelance 11.png" alt="Portfolio Thumbnail">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
@@ -1337,7 +1289,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://media-hosting.imagekit.io/3e5ef34211e24c4d/464912819_8527026580698965_5167137907239888379_n.jpg?Expires=1839386362&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=RfSrT3D-sBW8bGZ9rS8knYG4rcwS2trTFUm3xPtOjWqdB19HrWRk82kI24iDv5PMCkmNYUM09dx7bwkwx7RC7hceXUAuMfcimeLviFNxie2DagDcTvbUqcIc5ud50xi-QrA~Gy7vevDJmQO8t8en4JMzj20T2H249EWcX2bmNPwrL8tLd9XK0LX8A3YnNvlLoHFav4U0mMTz03mTsAQQb~ixuWmT21ZV7tWRtk7iknItTr6-pdky9jEF1f24ul~6lIw8VNCUuVdJdHi2glbXbcCnip4Ex6SAihdKlRU~tDTxf950DvSuRcgNnJDShynsN93hwIqa4Uyu34gHrrmZ3A__" alt="R.R. Tiwari">
+                             <img src="#" alt="">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="client-name">R.R. Tiwari</h4>
@@ -1358,7 +1310,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://media-hosting.imagekit.io/74ee12c7c5194cac/474951077_3492843097678977_9090195610210374469_n.jpg?Expires=1839386362&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=pyyfd1ARcWUH6aQycFPCamgq~EA36AYmC1PhcYzo6uNBm3SiC8GUXZLMWaz3Q8dhBW-QJcDmlccoOeZtaVObLeQut~0hTaM9Yw1cgkmYvtIKLEhIaDJWfEKiejUOY33NXhwu8o8I0j5g5O4A7zeiD9rSqjqmWRq~XElvbvoMG~Enizi0DsiY0k~tf42ON1mQk5MSisWcadTCXs~cWTj7XxyGlG5umuUGkGW~ci97I3XWjtO3ID0fk2TFJl4SjBiCBX4QQ-fH1IGcMyYf-PZmN15-LMrh3RPYDAa9J45ySCOD9e~K~Asi9UdNIbzFhog3PyWE-sNbUmKqrGafVptBfw__" alt="Ashis Roy">
+                            <img src="#" alt="Ashis Roy">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="client-name">Ashis Roy</h4>
@@ -1379,7 +1331,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://media-hosting.imagekit.io/a8c654cedbdf4010/WhatsApp%20Image%202024-12-20%20at%2009.17.20_3c5ce64b.jpg?Expires=1839386362&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=KMt8FoXON7bWJCZ-EWELS6ZxDvoy-y9~jHcYaOZZ0DIMCTMYybETEHY-Si9hGGdHdFeekuTnxlxYqddq5SQB4tvyPBeEgMygUT9hy~PwLaUYpOG8xvTnkV3BxfZBMbybIecF647OzIQOo9n5CuVvcJ1rTUcLBo3AaoTo~cBnKVzijjU66Bdy2ocwLssNtUikXhdhJpPXv8rFBJ6RVgzPyX7gRcV3E8iVvPJRxhsBD5hNsB-VijKRz7qTxBdMv68QF6ngeccRTvLP82QtgFEt6lfzs96zS61BKJDjB5bZdTLntU4QC5VM-gzmCwsgNU5dvT~Hjpsx6-e8WfbwVFH1eA__" alt="Gour Hari Mondal">
+                            <img src="#" alt="Gour Hari Mondal">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="client-name">Gour Hari Mondal</h4>
@@ -1400,7 +1352,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="image/client3.jpg" alt="Srabbanti Maity">
+                            <img src="#" alt="Srabbanti Maity">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="client-name">Srabbanti Maity</h4>
@@ -1416,6 +1368,26 @@
                         <p class="bn" style="display:none;">দীপঙ্করের ভিডিও এডিটিং আমার মেকআপ টিউটোরিয়ালগুলিকে রূপান্তরিত করেছে। তিনি যে পেশাদার স্পর্শ যোগ করেছেন তা আমার কন্টেন্টকে প্রতিযোগীদের থেকে আলাদা করে তুলেছে।</p>
                     </div>
                 </div>
+                <!-- Testimonial 5 -->
+<div class="testimonial-card">
+    <div class="testimonial-header">
+        <div class="testimonial-img">
+            <img src="#" alt="Arun Singh">
+        </div>
+        <div class="testimonial-info">
+            <h4 class="client-name">Arun Singh</h4>
+            <p class="client-title">Educator & Founder, SSC Vlogs</p>
+        </div>
+    </div>
+    <div class="testimonial-rating">
+        ★★★★★
+    </div>
+    <div class="testimonial-text">
+        <p class="en">Dipankar designed eye-catching thumbnails for my SSC preparation channel that significantly improved our click-through rate. His designs perfectly capture the essence of each lesson while maintaining brand consistency.</p>
+        <p class="hi" style="display:none;">दीपांकर ने मेरे SSC तैयारी चैनल के लिए आकर्षक थंबनेल डिजाइन किए जिससे हमारा क्लिक-थ्रू रेट काफी बढ़ गया। उनके डिजाइन प्रत्येक पाठ का सार पकड़ते हैं और ब्रांड की एकरूपता भी बनाए रखते हैं।</p>
+        <p class="bn" style="display:none;">দীপঙ্কর আমার এসএসসি প্রস্তুতি চ্যানেলের জন্য আকর্ষণীয় থাম্বনেল ডিজাইন করেছেন যা আমাদের ক্লিক-থ্রু রেট উল্লেখযোগ্যভাবে বাড়িয়েছে। তাঁর ডিজাইনগুলি প্রতিটি পাঠের সারাংশ নিখুঁতভাবে ধারণ করে এবং ব্র্যান্ডের ধারাবাহিকতাও বজায় রাখে।</p>
+    </div>
+</div>    
             </div>
         </div>
     </section>
