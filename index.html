@@ -1068,6 +1068,71 @@
                 transform: translateY(0);
             }
         }
+
+                /* Popup container */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        /* Popup content */
+        .popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Popup image */
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            background: #cc0000;
+        }
+        
+        /* Show popup */
+        .popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -1090,6 +1155,14 @@
             </nav>
         </div>
     </header>
+
+        <!-- Image Popup -->
+    <div id="imagePopup" class="popup">
+        <div class="popup-content">
+            <img src="image/Screenshot 2025-08-04 135532.png" alt="Popup Image">
+            <button class="close-btn" onclick="closePopup()">X</button>
+        </div>
+    </div>
     
     <!-- Hero Section -->
     <section id="home" class="hero-section">
@@ -1333,7 +1406,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="#" alt="Gour Hari Mondal">
+                            <img src="#" alt="l">
                         </div>
                         <div class="testimonial-info">
                             <h4 class="client-name">Gour Hari Mondal</h4>
@@ -1374,7 +1447,7 @@
 <div class="testimonial-card">
     <div class="testimonial-header">
         <div class="testimonial-img">
-            <img src="#" alt="Arun Singh">
+            <img src="#" alt="">
         </div>
         <div class="testimonial-info">
             <h4 class="client-name">Arun Singh</h4>
@@ -1395,7 +1468,7 @@
 <div class="testimonial-card">
     <div class="testimonial-header">
         <div class="testimonial-img">
-            <img src="#" alt="Mrinmoy">
+            <img src="#" alt="">
         </div>
         <div class="testimonial-info">
             <h4 class="client-name">Mrinmoy Sir</h4>
@@ -1618,6 +1691,18 @@
                 });
             }
         });
+
+                // Show the popup when the page loads
+        window.onload = function () {
+            const popup = document.getElementById('imagePopup');
+            popup.classList.add('show');
+        };
+        
+        // Close the popup
+        function closePopup() {
+            const popup = document.getElementById('imagePopup');
+            popup.classList.remove('show');
+        }
     </script>
 </body>
 </html>
