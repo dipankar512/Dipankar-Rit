@@ -1133,6 +1133,89 @@
             visibility: visible;
             opacity: 1;
         }
+
+        /* Popup buttons container */
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            perspective: 800px;
+        }
+
+        /* Popup button styles */
+        .popup-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            transition: 
+            background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+            transform 0.5s cubic-bezier(0.25, 1.5, 0.25, 1),
+            box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 1.5px 8px rgba(129,0,189,0.15);
+            will-change: transform;
+            perspective: 800px;
+            backface-visibility: hidden;
+            animation: popup3dIn 0.8s cubic-bezier(0.25, 1.5, 0.25, 1);
+        }
+
+        @keyframes popup3dIn {
+            0% {
+            opacity: 0;
+            transform: scale(0.7) rotateY(40deg);
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            }
+            60% {
+            opacity: 1;
+            transform: scale(1.08) rotateY(-10deg);
+            box-shadow: 0 16px 48px rgba(129,0,189,0.18);
+            }
+            100% {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 1.5px 8px rgba(129,0,189,0.15);
+            }
+        }
+
+        /* Call button (orange) */
+        .call-btn {
+            background: linear-gradient(135deg, #ff9800 0%, #ffb347 100%);
+        }
+
+        .call-btn:hover {
+            background: linear-gradient(135deg, #e68900 0%, #ff9800 100%);
+            transform: scale(1.08) rotateY(-8deg) translateY(-6px);
+            box-shadow: 0 16px 48px rgba(255,152,0,0.25);
+        }
+
+        /* WhatsApp button (green) */
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #43e97b 100%);
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #1ebc57 0%, #25d366 100%);
+            transform: scale(1.08) rotateY(8deg) translateY(-6px);
+            box-shadow: 0 16px 48px rgba(37,211,102,0.25);
+        }
+
+        /* Button icons */
+        .popup-btn i {
+            margin-right: 12px;
+            font-size: 24px;
+            animation: iconPulse 1.2s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1) rotateZ(0deg);}
+            50% { transform: scale(1.18) rotateZ(8deg);}
+        }
     </style>
 </head>
 <body>
@@ -1156,13 +1239,21 @@
         </div>
     </header>
 
-        <!-- Image Popup -->
-    <div id="imagePopup" class="popup">
-        <div class="popup-content">
-            <img src="image/Screenshot 2025-08-04 135532.png" alt="Popup Image">
-            <button class="close-btn" onclick="closePopup()">X</button>
+                <!-- Image Popup -->
+        <div id="imagePopup" class="popup">
+            <div class="popup-content">
+                <img src="image/Screenshot 2025-08-04 135532.png" alt="Popup Image">
+                <button class="close-btn" onclick="closePopup()">X</button>
+                <div class="popup-buttons">
+                    <a href="tel:+917001821712" class="popup-btn call-btn">
+                        <i class="fas fa-phone"></i> Call
+                    </a>
+                    <a href="https://wa.me/917001821712" target="_blank" class="popup-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
     
     <!-- Hero Section -->
     <section id="home" class="hero-section">
