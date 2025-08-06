@@ -1216,6 +1216,62 @@
             0%, 100% { transform: scale(1) rotateZ(0deg);}
             50% { transform: scale(1.18) rotateZ(8deg);}
         }
+
+                /* Instagram Reels Section */
+        .instagram-reels {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+        }
+        
+        .instagram-reels .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .reels-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+        }
+        
+        .reel {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 350px;
+            scroll-snap-align: start;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .reel video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .see-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .see-more .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .see-more .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
@@ -1242,7 +1298,7 @@
                 <!-- Image Popup -->
         <div id="imagePopup" class="popup">
             <div class="popup-content">
-                <img src="image/Screenshot 2025-08-04 135532.png" alt="Popup Image">
+                <img src="image/Screenshot 2025-08-04 135532.jpg" alt="Popup Image">
                 <button class="close-btn" onclick="closePopup()">X</button>
                 <div class="popup-buttons">
                     <a href="tel:+917001821712" class="popup-btn call-btn">
@@ -1275,7 +1331,7 @@
                         <a href="https://twitter.com/biography_d?s=09" target="_blank" class="social-icon" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://instagram.com/dfilmbiography" target="_blank" class="social-icon" aria-label="Instagram">
+                        <a href="https://www.instagram.com/deepgraphic26/" target="_blank" class="social-icon" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://whatsapp.com/channel/0029Va4w6up7YSd0Xvdixk2U" target="_blank" class="social-icon" aria-label="WhatsApp">
@@ -1433,6 +1489,47 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- Instagram Reels Section -->
+<section id="instagram-reels" class="instagram-reels">
+    <div class="container">
+        <div class="section-title">
+            <h2>Instagram Reels</h2>
+            <p>Preview some of my recent work on Instagram</p>
+        </div>
+        <div class="reels-container">
+            <!-- Reel 1 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DLg_XqCqnb-/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+            <!-- Reel 2 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DLkCG83SOXQ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+            <!-- Reel 3 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DLmsAxoyrKw/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+            <!-- Reel 4 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DLo2DkeIBzB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+            <!-- Reel 5 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DMDIc77SNnV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+            <!-- Reel 6 -->
+            <div class="reel">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DMFjw3tyUgu/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+            </div>
+        </div>
+        <div class="see-more">
+            <a href="https://www.instagram.com/deepgraphic26/" target="_blank" class="btn btn-primary">See More</a>
+        </div>
+    </div>
+</section>
+<script async src="//www.instagram.com/embed.js"></script>
 </section>
 
     <!-- Testimonials Section -->
@@ -1618,7 +1715,7 @@
                     <div class="footer-social-links">
                         <a href="https://facebook.com/dipankaroffical2" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://twitter.com/biography_d?s=09" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com/dfilmbiography" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/deepgraphic26/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://whatsapp.com/channel/0029Va4w6up7YSd0Xvdixk2U" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://youtube.com/@DFilmbiographyOfficial" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
