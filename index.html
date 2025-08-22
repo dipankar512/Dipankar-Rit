@@ -1069,154 +1069,6 @@
             }
         }
 
-                /* Popup container */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        /* Popup content */
-        .popup-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Popup image */
-        .popup-content img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Close button */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff0000;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
-        }
-        
-        .close-btn:hover {
-            background: #cc0000;
-        }
-        
-        /* Show popup */
-        .popup.show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* Popup buttons container */
-        .popup-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            perspective: 800px;
-        }
-
-        /* Popup button styles */
-        .popup-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-            transition: 
-            background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-            transform 0.5s cubic-bezier(0.25, 1.5, 0.25, 1),
-            box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 1.5px 8px rgba(129,0,189,0.15);
-            will-change: transform;
-            perspective: 800px;
-            backface-visibility: hidden;
-            animation: popup3dIn 0.8s cubic-bezier(0.25, 1.5, 0.25, 1);
-        }
-
-        @keyframes popup3dIn {
-            0% {
-            opacity: 0;
-            transform: scale(0.7) rotateY(40deg);
-            box-shadow: 0 0 0 rgba(0,0,0,0);
-            }
-            60% {
-            opacity: 1;
-            transform: scale(1.08) rotateY(-10deg);
-            box-shadow: 0 16px 48px rgba(129,0,189,0.18);
-            }
-            100% {
-            opacity: 1;
-            transform: scale(1) rotateY(0deg);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 1.5px 8px rgba(129,0,189,0.15);
-            }
-        }
-
-        /* Call button (orange) */
-        .call-btn {
-            background: linear-gradient(135deg, #ff9800 0%, #ffb347 100%);
-        }
-
-        .call-btn:hover {
-            background: linear-gradient(135deg, #e68900 0%, #ff9800 100%);
-            transform: scale(1.08) rotateY(-8deg) translateY(-6px);
-            box-shadow: 0 16px 48px rgba(255,152,0,0.25);
-        }
-
-        /* WhatsApp button (green) */
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25d366 0%, #43e97b 100%);
-        }
-
-        .whatsapp-btn:hover {
-            background: linear-gradient(135deg, #1ebc57 0%, #25d366 100%);
-            transform: scale(1.08) rotateY(8deg) translateY(-6px);
-            box-shadow: 0 16px 48px rgba(37,211,102,0.25);
-        }
-
-        /* Button icons */
-        .popup-btn i {
-            margin-right: 12px;
-            font-size: 24px;
-            animation: iconPulse 1.2s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1) rotateZ(0deg);}
-            50% { transform: scale(1.18) rotateZ(8deg);}
-        }
-
                 /* Instagram Reels Section */
         .instagram-reels {
             background-color: var(--bg-light);
@@ -1272,6 +1124,513 @@
             background-color: var(--primary-dark);
             transform: translateY(-3px);
         }
+
+        :root {
+            --primary: #8100bd;
+            --primary-dark: #670097;
+            --primary-light: #8300da;
+            --text: #2b2b2b;
+            --light-text: #949494;
+            --bg-light: #ffffff;
+            --white: #f1f1f1;
+            --black: #000000;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-slow: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Hero Banner Slider */
+        .hero-banner {
+            height: 60vh;
+            width: 100%;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: var(--transition-slow);
+        }
+
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-color: #000000;
+        }
+
+        .banner-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            width: 100%;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .banner-content p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .banner-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .banner-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(92, 47, 47, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .banner-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 30px 10%;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Portfolio Categories with Scroll Buttons */
+        .portfolio-categories-container {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-categories {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 15px;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            scroll-behavior: smooth;
+        }
+
+        .portfolio-categories::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .category-scroll-btn {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .category-scroll-btn:hover {
+            opacity: 1;
+        }
+
+        .category-scroll-btn.left {
+            left: 0;
+            justify-content: flex-start;
+            padding-left: 10px;
+        }
+
+        .category-scroll-btn.right {
+            right: 0;
+            justify-content: flex-end;
+            padding-right: 10px;
+            background: linear-gradient(270deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .portfolio-categories-container:hover .category-scroll-btn {
+            opacity: 0.7;
+        }
+
+        .category-btn {
+            padding: 10px 25px;
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Horizontal Portfolio Grid with Scroll Buttons */
+        .portfolio-grid-container {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-grid-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 10px 0 30px 0;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .portfolio-grid-scroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .grid-scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .grid-scroll-btn:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .grid-scroll-btn.left {
+            left: 15px;
+        }
+
+        .grid-scroll-btn.right {
+            right: 15px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition-slow);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg);
+            position: relative;
+            cursor: pointer;
+            min-width: 300px;
+            flex-shrink: 0;
+        }
+
+        .portfolio-item:hover {
+            transform: perspective(1000px) rotateY(10deg) translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .before-after {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-info {
+            color: white;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        .modal-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-info p {
+            opacity: 0.8;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background-color: var(--primary-dark);
+            transform: rotate(90deg);
+        }
+
+        /* Side Scroll Button */
+        .side-scroll {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-hover);
+            transition: var(--transition);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .side-scroll.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-scroll:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .banner-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-banner {
+                height: 50vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-content {
+                text-align: center;
+                padding: 0 5%;
+            }
+            
+            .banner-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .close-btn {
+                top: -60px;
+                right: 0;
+            }
+            
+            .grid-scroll-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-banner {
+                height: 40vh;
+            }
+            
+            .banner-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .portfolio-item {
+                min-width: 250px;
+            }
+            
+            .grid-scroll-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+            }
+            
+            .grid-scroll-btn.left {
+                left: 10px;
+            }
+            
+            .grid-scroll-btn.right {
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1295,22 +1654,7 @@
         </div>
     </header>
 
-                <!-- Image Popup -->
-        <div id="imagePopup" class="popup">
-            <div class="popup-content">
-                <img src="image/Screenshot 2025-08-04 135532.jpg" alt="Popup Image">
-                <button class="close-btn" onclick="closePopup()">X</button>
-                <div class="popup-buttons">
-                    <a href="tel:+917001821712" class="popup-btn call-btn">
-                        <i class="fas fa-phone"></i> Call
-                    </a>
-                    <a href="https://wa.me/917001821712" target="_blank" class="popup-btn whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    
+           
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
@@ -1375,13 +1719,7 @@
                 <p>I offer a comprehensive range of creative services to bring your vision to life</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-photo-film"></i>
-                    </div>
-                    <h3>Video Editing</h3>
-                    <p>Professional editing of your footage to create compelling visual stories with perfect timing and effects.</p>
-                </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-image"></i>
@@ -1395,6 +1733,13 @@
                     </div>
                     <h3>Graphic Design</h3>
                     <p>Creating visually appealing designs for logos, branding materials, social media, and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-photo-film"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Professional editing of your footage to create compelling visual stories with perfect timing and effects.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1470,7 +1815,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="image/portfolio photo edit.png" alt="About Dipankar Rit">
+                    <img src="image/2nd profile image.png" alt="About Dipankar Rit">
                 </div>
             </div>
         </div>
@@ -1482,14 +1827,509 @@
         <div class="section-title">
             <h2>My Portfolio</h2>
             <p>A selection of my recent creative projects</p>
-            <div class="portfolio-image">
-                <a href="ditels.html">
-                    <img src="image/yttyeryyt.png" alt="Portfolio Thumbnail" style="cursor:pointer;">
-                </a>
-            </div>
         </div>
     </div>
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipankar Rit - Creative Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+<body>
+    
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">
+        </div>
+
+        <!-- Portfolio Categories with Scroll Buttons -->
+        <div class="portfolio-categories-container">
+            <button class="category-scroll-btn left" id="scrollLeft">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="portfolio-categories" id="categoriesContainer">
+                <button class="category-btn active" data-category="all">All Work</button>
+                <button class="category-btn" data-category="thumbnail">Thumbnail</button>
+                <button class="category-btn" data-category="photo">Photo Editing</button>
+                <button class="category-btn" data-category="video">Video Editing</button>
+                <button class="category-btn" data-category="motion">Motion Graphics</button>
+                <button class="category-btn" data-category="brand">Brand Design</button>
+                <button class="category-btn" data-category="social">Social Media</button>
+                <button class="category-btn" data-category="ecommerce">E-Commerce</button>
+                <button class="category-btn" data-category="logo">Logo Design</button>
+                <button class="category-btn" data-category="album">Album Design</button>
+                <button class="category-btn" data-category="website">Website & App</button>
+                <button class="category-btn" data-category="banner">Banner Design</button>
+                <button class="category-btn" data-category="sticker">Sticker Design</button>
+                <button class="category-btn" data-category="tshirt">T-Shirt Design</button>
+                <button class="category-btn" data-category="package">Product Package</button>
+            </div>
+            
+            <button class="category-scroll-btn right" id="scrollRight">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Portfolio Grid with Horizontal Scrolling -->
+        <div class="portfolio-grid-container">
+            <button class="grid-scroll-btn left" id="gridScrollLeft">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="portfolio-grid-scroll" id="portfolioGrid">
+                <!-- Thumbnail Design -->
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/1.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/2.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/3.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/4.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/5.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/fainence type.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/EDUCATION THUMBNAIL 2.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/gym thumbnail.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/6.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/7.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/8.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/9.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/10.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/11.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/12.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>    
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/13.jpg" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>    
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/14.png" alt="Thumbnail Design" class="portfolio-img">                
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/17.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>    
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/15.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>   
+                
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/16.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>  
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/18.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/19.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/20.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/21.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/22.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/23.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/24.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/25.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/26.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/27.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/28.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/29.jpg" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>    
+
+                <div class="portfolio-item" data-category="thumbnail">
+                    <img src="photos/thumbnail/30.png" alt="Thumbnail Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Series of thumbnails for content creator</p>
+                    </div>
+                </div>
+
+                <!-- Photo Editing -->
+                <div class="portfolio-item" data-category="photo">
+                    <img src="photos/photo_editing/Untitled-1.png" alt="Photo Editing" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <div class="before-after">
+                            <span>BEFORE</span> <span>AFTER</span>
+                        </div>
+                        <h3>Old to New</h3>
+                        <p>Good Quality Image Editing</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photo">
+                    <img src="photos/photo_editing/bg remove2.jpg" alt="Photo Editing" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <div class="before-after">
+                            <span>BEFORE</span> <span>AFTER</span>
+                        </div>
+                        <h3>Portrait Retouching</h3>
+                        <p>Professional editing for model portfolio</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photo">
+                    <img src="photos/photo_editing/bg remove2.jpg" alt="Photo Editing" class="portfolio-img">
+                    <div class="portfolio-info">
+                    <h3>Background Remove</h3>
+                        <p>Professional Background Remove Detailing parson/Hair</p>
+                    </div>
+                </div>
+
+                <!-- Video Editing -->
+                <div class="portfolio-item" data-category="video">
+                    <img src="https://source.unsplash.com/random/600x400?video,editing,1" alt="Video Editing" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Music Video</h3>
+                        <p>Editing and color grading for indie artist</p>
+                    </div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_221923.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/k.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_222201.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_222653.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_223004.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_223510.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_223745.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="photos/ecom/20241224_223950.jpg" alt="E-Commerce Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Page Design</h3>
+                        <p>E-commerce layout for online store</p>
+                    </div>
+                </div>
+
+                <!-- Logo Design -->
+                <div class="portfolio-item" data-category="logo">
+                    <img src="photos/photo_editing/logo.png" alt="Logo Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Brand Identity</h3>
+                        <p>Complete logo package for restaurant</p>
+                    </div>
+                </div>
+
+                <!-- product package -->
+                <div class="portfolio-item" data-category="package">
+                    <img src="https://media-hosting.imagekit.io/ade90f0c43824e5b/Asset%201swedqwer.png?Expires=1841725293&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=D7HC8gUo3WCmll~464NJKPsPjpRcQ9bZN8y6V5rS4A3blojW1KpFTAduOG7JB63vMTxDq4HV~gIvhvI-tO4xK087G3~YphG2o8ciifR8ceBQw83JSzUT0uMDBZtHaqwD20-O-to3QqL48UVHUNaCgBkLeHgsQO07P极速赛车开奖结果记录历史号码查询表6nKuuxkaxfCLPx-gI9-amZwLvj7vpUdWaBkyDwFizuji~E3lapvmgmO1vrbQUD极速赛车开奖结果记录历史号码查询表vZtmnkH4WLKXPU-OrohwqNPLhTo20nS9Z1H1bca6Gx9egS97BhBcPHsNkjwEarCwga1d1XeoO6bh3WSkZPR6dQBBqNmY0~aSeLNhT-UPUm4Wsbtu1JNKDxQ__" alt="Product Package Design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Product Package Design</h3>
+                        <p>Eco-friendly packaging for cosmetics</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="grid-scroll-btn right" id="gridScrollRight">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Side Scroll Button -->
+    <div class="side-scroll" id="sideScroll">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <img src="" alt="" class="modal-img" id="modalImage">
+            <div class="modal-info" id="modalInfo">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Banner Slider -->
+    <section class="hero-banner">
+        <div class="banner-slides">
+            <!-- Slide 1 -->
+            <div class="banner-slide" style="background-image: url('photos/thumbnail/2.png')">
+                <div class="banner-content">
+                    <h1>Creative Design Solutions That Inspire</h1>
+                    <p>Transforming ideas into visually stunning realities with innovative design approaches.</p>
+                    <a href="#portfolio" class="btn">View My Work</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="banner-slide" style="background-image: url('photos/thumbnail/8.jpg')">
+                <div class="banner-content">
+                    <h1>Pixel-Perfect Visual Creations</h1>
+                    <p>Meticulous attention to detail in every project to deliver exceptional quality.</p>
+                    <a href="#portfolio" class="btn">Explore Portfolio</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="banner-slide" style="background-image: url('photos/photo_editing/Untitled-1.png')">
+                <div class="banner-content">
+                    <h1>Bridging Art & Technology</h1>
+                    <p>Where artistic vision meets technical expertise for impactful digital experiences.</p>
+                    <a href="#portfolio" class="btn">See Projects</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="banner-dots">
+            <div class="banner-dot active" data-slide="0"></div>
+            <div class="banner-dot" data-slide="1"></div>
+            <div class="banner-dot" data-slide="2"></div>
+        </div>
+    </section>
+
 
 <!-- Instagram Reels Section -->
 <section id="instagram-reels" class="instagram-reels">
@@ -1879,18 +2719,194 @@
                 });
             }
         });
-
-                // Show the popup when the page loads
-        window.onload = function () {
-            const popup = document.getElementById('imagePopup');
-            popup.classList.add('show');
-        };
+       
+        // Auto-sliding Banner
+        const bannerSlides = document.querySelector('.banner-slides');
+        const bannerDots = document.querySelectorAll('.banner-dot');
+        let currentSlide = 0;
+        const slideCount = document.querySelectorAll('.banner-slide').length;
+        const slideInterval = 5000; // 5 seconds
         
-        // Close the popup
-        function closePopup() {
-            const popup = document.getElementById('imagePopup');
-            popup.classList.remove('show');
+        function goToSlide(index) {
+            currentSlide = index;
+            bannerSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            bannerDots.forEach(dot => dot.classList.remove('active'));
+            bannerDots[currentSlide].classList.add('active');
         }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            goToSlide(currentSlide);
+        }
+        
+        // Auto slide
+        let slideTimer = setInterval(nextSlide, slideInterval);
+        
+        // Pause on hover
+        const banner = document.querySelector('.hero-banner');
+        banner.addEventListener('mouseenter', () => {
+            clearInterval(slideTimer);
+        });
+        
+        banner.addEventListener('mouseleave', () => {
+            slideTimer = setInterval(nextSlide, slideInterval);
+        });
+        
+        // Dot navigation
+        bannerDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                // Reset timer when manually changing slides
+                clearInterval(slideTimer);
+                slideTimer = setInterval(nextSlide, slideInterval);
+            });
+        });
+        
+        // Category Scrolling
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const scrollLeft = document.getElementById('scrollLeft');
+        const scrollRight = document.getElementById('scrollRight');
+        
+        scrollLeft.addEventListener('click', () => {
+            categoriesContainer.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+        
+        scrollRight.addEventListener('click', () => {
+            categoriesContainer.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+        
+        // Portfolio Grid Scrolling
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const gridScrollLeft = document.getElementById('gridScrollLeft');
+        const gridScrollRight = document.getElementById('gridScrollRight');
+        
+        gridScrollLeft.addEventListener('click', () => {
+            portfolioGrid.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+        
+        gridScrollRight.addEventListener('click', () => {
+            portfolioGrid.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+        
+        // Touch swipe functionality for portfolio grid
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        portfolioGrid.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        portfolioGrid.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum swipe distance
+            
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swipe left - scroll right
+                portfolioGrid.scrollBy({ left: 400, behavior: 'smooth' });
+            }
+            
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swipe right - scroll left
+                portfolioGrid.scrollBy({ left: -400, behavior: 'smooth' });
+            }
+        }
+        
+        // Portfolio Filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter items
+                const category = btn.dataset.category;
+                
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalInfo = document.getElementById('modalInfo');
+        const closeModal = document.getElementById('closeModal');
+        
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const title = item.querySelector('h3').textContent;
+                const description = item.querySelector('p').textContent;
+                const beforeAfter = item.querySelector('.before-after');
+                
+                modalImg.src = imgSrc;
+                modalImg.alt = title;
+                
+                modalInfo.innerHTML = `
+                    <h3>${title}</h3>
+                    <p>${description}</p>
+                    ${beforeAfter ? '<div class="before-after">'+beforeAfter.innerHTML+'</div>' : ''}
+                `;
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Side Scroll Button
+        const sideScroll = document.getElementById('sideScroll');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                sideScroll.classList.add('active');
+            } else {
+                sideScroll.classList.remove('active');
+            }
+        });
+        
+        sideScroll.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
