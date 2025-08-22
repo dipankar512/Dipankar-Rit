@@ -1272,8 +1272,6 @@
             background-color: var(--white);
         }
 
-        .
-        }
 
         /* Portfolio Categories with Scroll Buttons */
         .portfolio-categories-container {
@@ -1814,9 +1812,6 @@
         <div class="section-title">
             <h2>My Portfolio</h2>
             <p>A selection of my recent creative projects</p>
-            <img src="portfolio bar.png" alt="Thumbnail Design" class="portfolio-img">                
-                    <div class="portfolio-info">
-        </div>
     </div>
 </section>
     
@@ -2271,6 +2266,45 @@
             </div>
         </div>
     </div>
+
+    <!-- Portfolio Bar Image -->
+    <div class="portfolio-bar-image">
+        <img src="portfolio bar.png" alt="Horizontal bar graphic with gradient purple and white, used as a visual divider in the portfolio section" class="portfolio-bar-img">
+    </div>
+    <style>
+        .portfolio-bar-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0 30px 0;
+        }
+        .portfolio-bar-img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .portfolio-bar-img {
+                max-width: 95vw;
+            }
+            .portfolio-bar-image {
+                margin: 25px 0 20px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .portfolio-bar-img {
+                max-width: 100vw;
+                border-radius: 4px;
+            }
+            .portfolio-bar-image {
+                margin: 15px 0 10px 0;
+            }
+        }
+    </style>
 
     <!-- Hero Banner Slider -->
     <section class="hero-banner">
